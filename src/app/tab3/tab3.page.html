@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lectura Fotográfica
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button expand="block" (click)="selectSource()">Seleccionar Imagen</ion-button>
+  <ion-button expand="block" (click)="recognizeImage()" [disabled]="!selectedImage">Reconocer Imagen</ion-button>
+
+  <img [src]="selectedImage" *ngIf="selectedImage">
+
+  <ion-card *ngIf="imageText">
+    <ion-card-header>
+      Texto de la Imagen
+    </ion-card-header>
+    <ion-card-content>
+      {{ imageText }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
